@@ -18,16 +18,16 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Cache
-        uses: actions/cache@v2
-        with:
-          path: |
-                docs/__cache
-                ~/.julia/artifacts
-                ~/.julia/packages
-                ~/.cache/pip
-          key: ${{ runner.os }}-franklin-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-franklin-cache-
+      # - name: Cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #           docs/__cache
+      #           ~/.julia/artifacts
+      #           ~/.julia/packages
+      #           ~/.cache/pip
+      #     key: ${{ runner.os }}-franklin-${{ github.sha }}
+      #     restore-keys: ${{ runner.os }}-franklin-cache-
 
       # Julia
       - name: Install Julia

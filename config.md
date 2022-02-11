@@ -1,5 +1,5 @@
 +++
 author = "Octavian"
 
-prepath = "xranklnin-pyplot"
+prepath = "xranklin-pyplot"
 +++

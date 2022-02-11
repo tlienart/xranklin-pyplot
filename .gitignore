@@ -1,0 +1,4 @@
+__site/
+__cache/
+.DS_Store
+Manifest.toml

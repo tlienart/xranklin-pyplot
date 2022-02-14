@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   build-and-deploy:
@@ -26,7 +25,6 @@ jobs:
       #           ${{ env.SITE_FOLDER }}/__cache
       #           ~/.julia/artifacts
       #           ~/.julia/packages
-      #           ~/.julia/conda
       #     key: ${{ runner.os }}-${{ env.CACHE_KEY }}-${{ github.sha }}
       #     restore-keys: ${{ runner.os }}-${{ env.CACHE_KEY }}-
 
@@ -40,8 +38,10 @@ jobs:
       - name: Install python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: 3.8
       - run: pip install matplotlib
+
+      - run: which python
 
       # Website build
       - run: julia -e '

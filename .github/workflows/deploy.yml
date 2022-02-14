@@ -44,11 +44,14 @@ jobs:
       - run: which python
 
       # Website build
-      - run: julia -e '
-                using Pkg;
-                Pkg.add(url="https://github.com/tlienart/Xranklin.jl", rev="main");
-                using Xranklin;
-                build("${{ env.SITE_FOLDER }}"; clear=${{ env.CLEAR_CACHE }});'
+      - run: |
+             export PYTHON=$(which python);
+             julia -e '
+               @show ENV["PYTHON"];
+               using Pkg;
+               Pkg.add(url="https://github.com/tlienart/Xranklin.jl", rev="main");
+               using Xranklin;
+               build("${{ env.SITE_FOLDER }}"; clear=${{ env.CLEAR_CACHE }});'
 
       # Deployment and caching
       - run: touch ${{ env.SITE_FOLDER }}/__site/.nojekyll

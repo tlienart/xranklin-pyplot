@@ -4,6 +4,6 @@ abc
 
 ```!
 using PyPlot
-plot(rand(10), rand(10))
+plot(rand(15), rand(15))
 gcf()
 ```

@@ -25,9 +25,9 @@ jobs:
                 ${{ env.SITE_FOLDER }}/__site
                 ~/.julia/artifacts
                 ~/.julia/packages
-                !~/.julia/PyCall
-                !~/.julia/PyPlot
-                !~/.julia/Conda
+                !~/.julia/packages/PyCall
+                !~/.julia/packages/PyPlot
+                !~/.julia/packages/Conda
           key: ${{ runner.os }}-${{ env.CACHE_KEY }}-${{ github.sha }}
           restore-keys: ${{ runner.os }}-${{ env.CACHE_KEY }}-
 
